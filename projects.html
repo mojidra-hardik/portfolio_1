@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: #1f242d;
+  min-height: 100vh;
+  color: antiquewhite;
+}
+
+a {
+  color: antiquewhite;
+  text-decoration: none;
+}
+
+.navbar {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  padding: 25px 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  animation: show-nav 1.5s linear forwards;
+  animation-delay: 1.1s;
+  backdrop-filter: blur(8px);
+}
+
+@keyframes show-nav {
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.navbar .logo {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar ul li {
+  list-style: none;
+  margin-left: 25px;
+}
+
+.navbar ul li a {
+  font-size: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
+  color: #7cf03d;
+}
+
+.bar-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: -1;
+}
+
+.bar-animation .bar {
+  width: 100%;
+  height: 100%;
+  background-color: #1f242d;
+  transform: translateY(-100%);
+  animation: show-bars 0.5s ease-in-out forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes show-bars {
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.projects-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 20px 100px;
+  background: url('dodge') no-repeat center center/cover;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.projects-section h1 {
+  font-size: 36px;
+  color: #7cf03d;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.project-card {
+  display: block;
+  background-color: rgba(124, 240, 61, 0.05);
+  border: 2px solid rgba(124, 240, 61, 0.4);
+  border-radius: 15px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo">PORTFOLIO</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="bar-animation">
+    <div class="bar" style="--i:1;"></div>
+    <div class="bar" style="--i:2;"></div>
+    <div class="bar" style="--i:3;"></div>
+    <div class="bar" style="--i:4;"></div>
+    <div class="bar" style="--i:5;"></div>
+    <div class="bar" style="--i:6;"></div>
+  </div>
+
+  <section class="projects-section">
+    <h1>My Projects</h1>
+    <div class="projects-container">
+
+      <a href="https://mojidra-hardik.github.io/D-Light-Motors/" target="_blank" class="project-card">
+        <h2>D-lite Motors</h2>
+        <p>A simple usable web that helps my friend manage his garage</p>
+      </a>
+
+      <a href="https://mojidra-hardik.github.io/twiter-clone/" target="_blank" class="project-card">
+        <h2>X home page</h2>
+        <p>A simple and responsive task manager built with HTML and Tailwind CSS</p>
+      </a>
+
+    </div>
+  </section>
+
+</body>
+</html>

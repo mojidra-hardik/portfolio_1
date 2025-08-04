@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me</title>
+  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    *{
+ margin:0%;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: sans-serif;
+}
+
+body {
+ background-color: #1f242d;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ min-height: 100vh;
+}
+
+a{
+ color: antiquewhite;
+text-decoration: none;
+}
+.navbar{
+top: 0;
+left: 0;
+width: 100%;
+position: fixed;
+padding: 25px 9%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+z-index: 100;
+visibility: hidden;
+opacity: 0;
+animation: show-nav 1.5s linear forwards; animation-delay: 1.1s;
+
+}
+@keyframes show-nav{
+ 100%{
+visibility: visible;
+ opacity: 1;
+}
+}
+.navbar .logo{
+ font-size: 30px;
+ font-weight: 700;
+}
+.navbar ul{
+ display: flex;
+ text-decoration: none;
+}
+.navbar ul li{
+ list-style: none;
+ margin-left: 25px;
+}
+.navbar ul li a{
+ font-size: 20px;
+ font-weight: 500;
+ transition: .3s;
+}
+.navbar ul li:hover a,
+.navbar ul li.active a
+{
+color: #7cf03d;
+}
+.bar-animation{
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ display: flex;
+z-index: -1 }
+
+.bar-animation .bar{
+ width: 100%;
+ height: 100%;
+ background-color: #1f242d;
+ transform: translateY(-100%);
+ animation: show-bars .5s ease-in-out forwards;
+ animation-delay: calc(.1s * var(--i));
+}
+@keyframes show-bars{
+ 100%{
+ transform: translateY(0%);
+ }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#" class="logo">PORTFOLIO</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li class="active"><a href="about.html" class="about">About Me</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="bar-animation">
+    <div class="bar" style="--i:1;"></div>
+    <div class="bar" style="--i:2;"></div>
+    <div class="bar" style="--i:3;"></div>
+    <div class="bar" style="--i:4;"></div>
+    <div class="bar" style="--i:5;"></div>
+    <div class="bar" style="--i:6;"></div>
+  </div>
+
+  <section class="about-section">
+    <div class="about-container">
+      <h1>About Me</h1>
+      <p><strong>Name:</strong> Hardik Mojidra</p>
+      <p><strong>School:</strong> MD SHAH VIDHYALAY BOTAD</p>
+      <p><strong>School Percentage:</strong> 83.85%</p>
+      <p><strong>College:</strong>LJ COLLEGE OF COMPUTER OF APPLICATION</p>
+      <p><strong>Current Year:</strong> 3rd Year, BACHLORE OF COMPUTER APPLICATION</p>
+      <p><strong>College CGPA:</strong> 8.2 / 10</p>
+      <p><strong>Skills:</strong> HTML, CSS, JavaScript, Tailwind, React , PYTHON , PHP</p>
+      <p><strong>Hobbies:</strong> Coding, Gaming, UI Design</p>
+    </div>
+  </section>
+
+</body>
+</html>
